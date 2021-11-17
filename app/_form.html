@@ -1,0 +1,70 @@
+<div class="basket-products__quant quantity">
+    <button class="quantity__button quantity__button_minus">-</button>
+    <div class="quantity__input">
+        <input autocomplete="off" type="text" value="1">
+    </div>
+    <button class="quantity__button quantity__button_plus">+</button>
+</div>
+
+<form action="mail.php" enctype="multipart/form-data" class="form" method="POST">
+    <div class="input">
+        <input type="hidden" placeholder="Имя" name="admin_email[]" value="andrey14091993@gmail.com">
+    </div>
+    <div class="input">
+        <input type="email" data-validate-field="email" placeholder="email" name="email">
+    </div>
+    <div class="input">
+        <input type="text" placeholder="Имя" name="name">
+    </div>
+    <div class="input">
+        <input type="tel" data-validate-field="tel" placeholder="Телефон" name="tel">
+    </div>
+    <div class="select">
+        <select name="sel">
+            <option value="1" selected="selected">Пункт №1</option>
+            <option value="2">Пункт №2</option>
+            <option value="3">Пункт №3</option>
+            <option value="4">Пункт №4</option>
+        </select>
+    </div>
+
+    <label class="check-box">
+        <input class="check-box__input" type="checkbox" name="check">
+        <span class="check-box__style"></span>
+        сheckbox
+    </label>
+    <label class="radio">
+        <input class="radio__input" type="radio" name="radio" value="2">
+        <span class="radio__style"></span>
+        radio
+    </label>
+    <label class="radio">
+        <input class="radio__input" type="radio" name="radio" value="1" checked>
+        <span class="radio__style"></span>
+        radio
+    </label>
+    <button type="submit" class="form__button">Отправить</button>
+</form>
+
+<!-- <form action="mail.php" enctype="multipart/form-data" class="form" method="POST">
+    <input type="hidden" name="admin_email[]" value="andrey14091993@gmail.com">
+    <input type="hidden" name="form_subject" value="Тема письма">
+    <h2>Отправка формы</h2>
+    <label class="form-label">
+        <span>Введите имя</span>
+        <input type="text" name="name">
+    </label>
+    <label class="form-label">
+        <span>Введите телефон</span>
+        <input type="tel" data-validate-field="tel" name="tel">
+    </label>
+    <label class="form-label">
+        <span>Введите email</span>
+        <input type="email" data-validate-field="email" name="email">
+    </label>
+    <label class="form-label file-label">
+        <span>Прикрепить файл</span>
+        <input type="file" name="file[]" multiple>
+    </label>
+    <button type="submit">Отправить</button>
+</form> -->

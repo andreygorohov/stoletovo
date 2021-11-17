@@ -1,0 +1,78 @@
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+.instatape {
+	@include adaptiv-value("padding-top", 48, 36, 1);
+	@include adaptiv-value("padding-bottom", 48, 36, 1);
+}
+
+.btn {
+	display: flex;
+	height: 50px;
+	background: $col1;
+	max-width: 250px;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin: 0px auto;
+	border-radius: 30px;
+	&.blue {
+		background: #008bb9;
+	}
+	&.orange {
+		background: #eda02e;
+	}
+}
+//accordeon
+.spoller {
+	color: #fff;
+	&__title {
+		font-size: 18px;
+		margin: 20px 0px 20px 0px;
+		cursor: pointer;
+	}
+
+	&__text {
+		font-size: 20px;
+		// padding: 20px;
+		height: 0;
+		overflow: hidden;
+		transition: all 0.5s;
+	}
+}
+
+.video {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+.videobg {
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+	}
+}

@@ -1,0 +1,20 @@
+@mixin font-face($font-family, $url, $weight) {
+    @font-face {
+        font-family: "#{$font-family}";
+        src: url("../fonts/#{$url}.woff2") format("woff2"), url("../#{$url}.woff") format("woff");
+        font-weight: #{$weight};
+        font-display: swap;
+        font-style: normal;
+    }
+}
+
+@include font-face("Roboto-Regular", "Roboto-Regular", 400);
+@include font-face("Roboto-Bold", "Roboto-Bold", 700);
+@include font-face("Roboto-Black", "Roboto-Black", 900);
+@include font-face("OpenSans-Regular", "OpenSans-Regular", 400);
+@include font-face("OpenSans-Bold", "OpenSans-Bold", 700);
+@include font-face("OpenSans-italic", "OpenSans-italic", 400);
+@include font-face("OpenSans-Semibold", "OpenSans-Semibold", 600);
+@include font-face("OpenSans-Semibolditalic", "OpenSans-Semibolditalic", 600);
+@include font-face("OpenSans-Bolditalic", "OpenSans-Bolditalic", 700);
+@include font-face("Forum-Regular", "Forum-Regular", 400);

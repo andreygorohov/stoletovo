@@ -1,0 +1,312 @@
+//<FORM ()>====================================================================================================
+//<BUTTONS (a.btn+tab)>====================================================================================================
+.form {
+	background: #fff;
+	padding: 20px 20px 20px 20px;
+	max-width: 100%;
+	&__button {
+		width: 100%;
+		padding: 10px 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+		max-width: 100%;
+		transition: all 0.3s;
+		&:hover {
+			background: #fbb03b;
+		}
+	}
+	&__error {
+	}
+}
+.input {
+	margin: 0px 0px 8px 0px;
+	display: block;
+	&__title {
+		color: #394552;
+		font-family: $osr;
+	}
+	input,
+	textarea {
+		border: 2px solid #e4e4e4;
+		width: 100%;
+		height: 50px;
+		display: block;
+		padding: 0px 0px 0px 10px;
+		font-size: 14px;
+		border-radius: 14px;
+		&::placeholder {
+			color: #ccc;
+			transition: all 0.3s;
+		}
+		&:focus {
+			outline: none;
+			border: 2px solid #5fb9e9;
+			box-shadow: inset 0px 0px 12px 0px rgba(#5fb9e9, 0.35);
+			&::placeholder {
+				opacity: 0;
+			}
+		}
+	}
+	textarea {
+		height: 100px;
+	}
+}
+.select {
+	border: 1px solid #50c878;
+	height: 40px;
+	position: relative;
+	transition: all 0.3s;
+	&.active-sel {
+		&:before {
+			right: 20px;
+			transform: rotate(-45deg);
+		}
+		&:after {
+			right: 10px;
+			transform: rotate(45deg);
+		}
+	}
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		transition: all 0.3s;
+		top: 50%;
+		width: 15px;
+		height: 1px;
+		background: #50c878;
+	}
+	&:before {
+		right: 20px;
+		transform: rotate(45deg);
+	}
+	&:after {
+		right: 10px;
+		transform: rotate(-45deg);
+	}
+	select {
+		background: none;
+		border: none;
+		appearance: none;
+		font-size: 14px;
+		line-height: 20px;
+		border-radius: 2px;
+		width: 100%;
+		height: 100%;
+		padding: 0px 30px;
+	}
+}
+.check-box {
+	display: block;
+	margin: 0px 0px 15px 0px;
+	padding: 0px 0px 0px 20px;
+	position: relative;
+	cursor: pointer;
+	font-size: 12px;
+	line-height: 13px;
+	color: #3c434d;
+	&__input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		&:checked + .check-box__style:before {
+			content: "";
+			width: 100%;
+			height: 100%;
+			// background: #0ea36e;
+			background: url("../img/icons/check.svg") 0 0 / contain no-repeat;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.check-box__style {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		border: 1px solid #e4e4e4;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		// margin: 0px 0px 0px -20px;
+	}
+}
+
+.radio {
+	display: block;
+	margin: 0px 0px 15px 0px;
+	padding: 0px 0px 0px 25px;
+	position: relative;
+	cursor: pointer;
+	.radio__input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		// padding: 0px 0px 0px 30px;
+
+		&:checked + .radio__style:before {
+			content: "";
+			width: 10px;
+			height: 10px;
+			background: #0ea36e;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	&__style {
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 20px;
+		height: 20px;
+		border: 2px solid #0ea36e;
+		border-radius: 50%;
+	}
+}
+
+//<INPUT (inp+tab)>====================================================================================================
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+textarea {
+	resize: none;
+	padding: 0px 0px;
+}
+//</INPUT>====================================================================================================
+
+//<OPTIONS (opt+tab)>====================================================================================================
+.options {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	// .options__item
+	&__item {
+		position: relative;
+		cursor: pointer;
+		&._error {
+		}
+	}
+	// .options__input
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		left: 0;
+		top: 0;
+		visibility: hidden;
+		&:checked + .options__text:before {
+		}
+		&:checked + .options__text:after {
+			transform: scale(1);
+		}
+	}
+	// .options__text
+	&__text {
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		font-size: 16px;
+		color: #ffffff;
+		letter-spacing: -0.3px;
+		line-height: calc(20 / 16);
+		&:before {
+			content: "";
+			align-self: flex-start;
+			margin: 0px 14px 0px 0px;
+			flex: 0 0 20px;
+			left: 0;
+			top: 0;
+			border-radius: 50%;
+			width: 20px;
+			height: 18px;
+			background: #fff;
+			border: 1px solid #a7a9ac;
+		}
+		&:after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			transform: scale(0);
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #77243a;
+			position: absolute;
+			left: 5px;
+			top: 4px;
+		}
+	}
+}
+//</OPTIONS>====================================================================================================
+
+//<QUANTITY>====================================================================================================
+.quantity {
+	width: 88px;
+	height: 40px;
+	display: flex;
+	border: 1px solid rgba(166, 166, 166, 0.45);
+	// .quantity__button
+	&__button {
+		flex: 0 0 30px;
+		position: relative;
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transition: all 0.3s ease 0s;
+			margin: 0px 0px 0px -4.5px;
+			background-color: #a6a6a6;
+			width: 9px;
+			height: 1px;
+		}
+		@media (min-width: $md2+px) {
+			&:hover {
+				&::before,
+				&::after {
+					background-color: rgba(0, 0, 0, 0.5);
+				}
+			}
+		}
+		// .quantity__button_plus
+		&_plus {
+			&::before {
+				transform: rotate(-90deg);
+			}
+		}
+		// .quantity__button_minus
+		&_minus {
+		}
+	}
+	// .quantity__input
+	&__input {
+		flex: 1 1 auto;
+		input {
+			height: 100%;
+			color: #a6a6a6;
+			font-size: 12px;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+//</QUANTITY>====================================================================================================
